@@ -12,9 +12,9 @@ var mPrev;
 var sPrev;
 var time;
 var randomWord;
-var rhymeHour;
-var rhymeMin;
-var rhymeSec;
+var rhymeHourTxt;
+var rhymeMinTxt;
+var rhymeSecTxt;
 var rhymesSec;
 var rhymesMin;
 var rhymesHour;
@@ -80,7 +80,7 @@ function drawClock() {
   fill(0);
   textAlign(LEFT);
   textFont(fontCeliasMedium);
-  text(rhymeHour + '\n' + rhymeMin + '\n' + rhymeSec, 0, -windowWidth/12);
+  text(rhymeHourTxt + '\n' + rhymeMinTxt + '\n' + rhymeSecTxt, 0, -windowWidth/12);
   
   //only change the text if the time has changed
   if (h != hPrev) {
@@ -104,9 +104,9 @@ function rhymeHour() {
   rhymesHour = RiTa.rhymes(convertNumberToWords(h));
   rhymesHour.then(function(result) {
     if (result.length > 0) {
-      rhymeHour = result[Math.floor(random(0, result.length))];
+      rhymeHourTxt = result[Math.floor(random(0, result.length))];
     } else {
-      rhymeHour = "um...";
+      rhymeHourTxt = "um...";
     }
   });
 }
@@ -115,9 +115,9 @@ function rhymeMinute() {
   rhymesMin = RiTa.rhymes(convertNumberToWords(m));
   rhymesMin.then(function(result) {
     if (result.length > 0) {
-      rhymeMin = result[Math.floor(random(0, result.length))];
+      rhymeMinTxt = result[Math.floor(random(0, result.length))];
     } else {
-      rhymeMin = "um...";
+      rhymeMinTxt = "um...";
     }
   });
 }
@@ -126,9 +126,9 @@ function rhymeSecond() {
   rhymesSec = RiTa.rhymes(convertNumberToWords(s));
   rhymesSec.then(function(result) {
     if (result.length > 0) {
-      rhymeSec = result[Math.floor(random(0, result.length))];
+      rhymeSecTxt = result[Math.floor(random(0, result.length))];
     } else {
-      rhymeSec = "um...";
+      rhymeSecTxt = "um...";
     }
   });
 }
