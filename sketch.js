@@ -93,6 +93,13 @@ function drawClock() {
   }
   if (s != sPrev) {
     rhymeSecond();
+    //if we didn't get any rhymes for hour or minute, try again
+    if (rhymeMinTxt == "um...") {
+      rhymeMinute();
+    }
+    if (rhymeHourTxt == "um...") {
+      rhymeHour();
+    }
     sPrev = s;
   }
   
