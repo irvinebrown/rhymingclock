@@ -95,9 +95,11 @@ function drawClock() {
     rhymeSecond();
     //if we didn't get any rhymes for hour or minute, try again
     if (rhymeMinTxt == "um...") {
+      //console.log("trying min again");
       rhymeMinute();
     }
     if (rhymeHourTxt == "um...") {
+      //console.log("trying hour again");
       rhymeHour();
     }
     sPrev = s;
