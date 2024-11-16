@@ -74,9 +74,9 @@ function drawClock() {
   textSize(windowWidth / 13);
   textAlign(RIGHT);
   textFont(fontCeliasMedium);
+  text(time, 0, -windowWidth/12);
 
   //draw the rhyme clock
-  text(time, 0, -windowWidth/12);
   fill(0);
   textAlign(LEFT);
   textFont(fontCeliasMedium);
